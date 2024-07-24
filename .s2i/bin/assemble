@@ -1,15 +1,13 @@
 #!/bin/bash
 
-echo "Copying source to /tmp/mysrc before assembling"
-mkdir /tmp/mysrc
-cp -Rf /tmp/src/ /tmp/mysrc/
+echo "Executing S2I builder's assemble script"
 rc=$?
 
 if [ $rc -eq 0 ]; then
-    echo "Executing S2I builder's assemble script after successful copy"
-    /usr/libexec/s2i/assemble
+    echo "Copying source to /tmp after assembling"
+    cp -Rf /tmp/src /tmp
 else
-    echo "Copying source to /tmp/mysrc failed"
+    echo "Copying source to /tmp failed"
 fi
 
 exit $rc
