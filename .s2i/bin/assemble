@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "Executing S2I builder's assemble script"
-/usr/libexec/s2i/assemble
+echo "Copying source to /tmp before assembling"
+cp -Rf /tmp/src /tmp
 rc=$?
 
 if [ $rc -eq 0 ]; then
-    echo "Copying source to /tmp after assembling"
-    cp -Rf /tmp/src /tmp
+    echo "Executing S2I builder's assemble script after successful copy"
+    /usr/libexec/s2i/assemble
 else
     echo "Copying source to /tmp failed"
 fi
