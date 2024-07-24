@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "Copying source to /opt/mysrc before assembling"
-sudo mkdir /opt/mysrc
-sudo cp -Rf /upload/src /opt/mysrc
+mkdir /opt/mysrc
+cp -Rf /upload/src /opt/mysrc
 rc=$?
 
 if [ $rc -eq 0 ]; then
