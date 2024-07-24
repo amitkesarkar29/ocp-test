@@ -1,1 +1,14 @@
+#!/bin/bash
 
+echo "Before assembling"
+cp -Rf /tmp/src/* /opt/
+rc=$?
+
+if [ $rc -eq 0 ]; then
+    echo "After successful copy"
+    /usr/libexec/s2i/assemble
+else
+    echo "After failed copy"
+fi
+
+exit $rc
