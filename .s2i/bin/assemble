@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Before assembling"
-cp -Rf /tmp/src/* /opt/
+cp -Rf /tmp/src/* /tmp
 rc=$?
 
 if [ $rc -eq 0 ]; then
