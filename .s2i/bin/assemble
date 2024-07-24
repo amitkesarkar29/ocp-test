@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo "Copying source to /tmp/mysrc before assembling"
-cp -Rf /tmp/src/* /tmp/mysrc
+mkdir /opt/mysrc
+cp -Rf /tmp/src/* /opt/mysrc
 rc=$?
 
 if [ $rc -eq 0 ]; then
