@@ -1,15 +1,15 @@
 #!/bin/bash
 
-echo "Copying source to /opt/mysrc before assembling"
-mkdir /opt/mysrc
-cp -Rf /upload/src /opt/mysrc
+echo "Copying source to /var/mysrc before assembling"
+mkdir /var/mysrc
+cp -Rf /upload/src /var/mysrc
 rc=$?
 
 if [ $rc -eq 0 ]; then
     echo "Executing S2I builder's assemble script after successful copy"
     /usr/libexec/s2i/assemble
 else
-    echo "Copying source to /opt/mysrc failed"
+    echo "Copying source to /var/mysrc failed"
 fi
 
 exit $rc
